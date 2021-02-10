@@ -84,7 +84,7 @@ userSchema.methods.generateToken = function (cb) {
 userSchema.statics.findByToken = function (token, cb) {
   var user = this;
 
-  user._id + "" = token;
+  // user._id + "" = token;
   // 토큰을 Decode(복호화) 함
   jwt.verify(token, "secretToken", function (err, decoded) {
     // 유저 아이디를 이용해서 유저를 찾은 다음 클라이언트에서 가져온 토큰과 DB에 보관된 토큰이 일치하는지 확인
